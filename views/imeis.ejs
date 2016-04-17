@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-md-24">
+		<form action="imeis" method="post">
+			<div class="input-group">
+		      <input type="text" class="form-control" placeholder="Número imei" id="imei" name="imei">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="submit">
+		        	<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+		        </button>
+		      </span>
+		    </div><!-- /input-group -->
+	    </form>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-24">
+		<h2>Imeis</h2>
+		<table class="table table-hover">
+			<tr>
+				<th>Imei</th>
+				<th>Aplicação</th>
+				<th>URL</th>
+			</tr>
+			<% _.each(imeis, function (imei) { %>
+				<% _.each(imei.aplicacoes, function (aplicacao) { %>
+				    <tr>
+						<td><%= imei.numeroImei %></td>
+						<td><%= aplicacao.nome %></td>
+						<td><%= aplicacao.url %></td>
+					</tr>
+				<% }); %>
+			<% }); %>
+		</table>
+	</div>
+</div>
