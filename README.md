@@ -1,2 +1,3 @@
 # proxy
-Aplicação central NX
+
+a [Sails](http://sailsjs.org) application
